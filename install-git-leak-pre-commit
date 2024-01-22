@@ -10,9 +10,6 @@ pre_commit_hook="$hooks_dir/pre-commit"
 # Download the script
 curl -o "$hooks_dir/git-leak-pre-commit" "$script_url"
 
-# Grant executive rights
-chmod +x "$hooks_dir/git-leak-pre-commit"
-
 # Check if pre-commit hook already exists
 if [ -f "$pre_commit_hook" ]; then
     # Check if the required content is present in pre-commit hook
@@ -28,5 +25,9 @@ else
     echo -e "#!/bin/bash\n$pre_commit_content" > "$pre_commit_hook"
     echo "Created pre-commit hook."
 fi
+
+# Grant executive rights
+chmod +x "$hooks_dir/git-leak-pre-commit"
+chmod +x "$hooks_dir/pre-commit"
 
 echo "Git Leaks pre-commit hook installed successfully!"

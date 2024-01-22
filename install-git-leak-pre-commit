@@ -1,20 +1,21 @@
 #!/bin/bash
 
-script_url="https://raw.githubusercontent.com/vsk44/kbot/main/scripts/git-leak-pre-commit"
-pre_commit_content="python3 git-leak-pre-commit"
+script_url="https://raw.githubusercontent.com/vsk44/git-leak-pre-commit-hook-script/main/git-leak-pre-commit"
 
 # Get the path to .git/hooks
 hooks_dir=$(git rev-parse --git-dir)/hooks
+
 pre_commit_hook="$hooks_dir/pre-commit"
+pre_commit_content="python3 git-leak-pre-commit"
 
 # Download the script
 curl -o "$hooks_dir/git-leak-pre-commit" "$script_url"
 
 # Check if pre-commit hook already exists
 if [ -f "$pre_commit_hook" ]; then
-    # Check if the required content is present in pre-commit hook
+    # Check if the required hook is present in pre-commit hook
     if ! grep -q "$pre_commit_content" "$pre_commit_hook"; then
-        # Append the required content to pre-commit hook
+        # Append the required hook to pre-commit hook
         echo "$pre_commit_content" >> "$pre_commit_hook"
         echo "Appended to existing pre-commit hook."
     else

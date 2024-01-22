@@ -23,7 +23,7 @@ if [ -f "$pre_commit_hook" ]; then
     fi
 else
     # Create a pre-commit hook script
-    echo -e "#!/bin/bash\n$pre_commit_content" > "$pre_commit_hook"
+    echo "#!/bin/bash\n$pre_commit_content" > "$pre_commit_hook"
     echo "Created pre-commit hook."
 fi
 

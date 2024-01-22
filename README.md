@@ -1,0 +1,1 @@
+# git-leak-pre-commit-hook-script

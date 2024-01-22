@@ -1,6 +1,8 @@
 # Встановлення git-leak-pre-commit
 Виконати команду для встановлення git-leak-pre-commit<br />
-`curl -sSL https://raw.githubusercontent.com/vsk44/git-leak-pre-commit-hook-script/main/install-git-leak-pre-commit | sh`
+```bash
+curl -sSL https://raw.githubusercontent.com/vsk44/git-leak-pre-commit-hook-script/main/install-git-leak-pre-commit | sh
+```
 
 # Опис git-leak-pre-commit
 Сам приклад скрипта був взятий з Git Leaks репо: https://github.com/gitleaks/gitleaks/blob/master/scripts/pre-commit.py.<br />

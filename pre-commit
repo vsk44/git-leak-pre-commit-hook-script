@@ -1,3 +1,23 @@
-#!/bin/bash
+#!/bin/sh
 
-python3 ./scripts/git-leak-pre-commit
+# Check OS
+case "$(uname)" in
+    Linux*)
+        # python3 for Linux
+        python_cmd="python3"
+        ;;
+    Darwin*)
+        # python3 for Darwin
+        python_cmd="python3"
+        ;;
+    MINGW*)
+        # python for Windows
+        python_cmd="python"
+        ;;
+    *)
+        echo "Unsupported operating system"
+        exit 1
+        ;;
+esac
+
+"$python_cmd" .git/hooks/git-leak-pre-commit.py

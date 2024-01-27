@@ -1,15 +1,15 @@
 #!/bin/bash
 
-script_url="https://raw.githubusercontent.com/vsk44/git-leak-pre-commit-hook-script/main/git-leak-pre-commit"
+script_url="https://raw.githubusercontent.com/vsk44/git-leak-pre-commit-hook-script/main/git-leak-pre-commit.py"
 
 # Get the path to .git/hooks
 hooks_dir=$(git rev-parse --git-dir)/hooks
 
 pre_commit_hook="$hooks_dir/pre-commit"
-pre_commit_content="python3 .git/hooks/git-leak-pre-commit"
+pre_commit_content="python3 .git/hooks/git-leak-pre-commit.py"
 
 # Download the script
-curl -o "$hooks_dir/git-leak-pre-commit" "$script_url"
+curl -o "$hooks_dir/git-leak-pre-commit.py" "$script_url"
 
 # Check if pre-commit hook already exists
 if [ -f "$pre_commit_hook" ]; then
@@ -28,7 +28,7 @@ else
 fi
 
 # Grant executive rights
-chmod +x "$hooks_dir/git-leak-pre-commit"
+chmod +x "$hooks_dir/git-leak-pre-commit.py"
 chmod +x "$hooks_dir/pre-commit"
 
 echo "Git Leaks pre-commit hook installed successfully!"

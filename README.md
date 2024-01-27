@@ -12,3 +12,4 @@ curl -sSL https://raw.githubusercontent.com/vsk44/git-leak-pre-commit-hook-scrip
 За допомогою команди для встановлення, виконується скрипт - **install-git-leak-pre-commit**. Після виконання скрипта створюється в .git/hooks/ два файли **git-leak-pre-commit** та **pre-commit**. Якщо **pre-commit** вже був раніше створений, просто наповнює його новим хуком **git-leak-pre-commit**. <br />
 
 Після проведення інсталяції перед кожним комітом буде автоматично тригериться хук **git-leak-pre-commit** для пошуку чутливої інформації в файлах проекту.
+ffdd

@@ -27,8 +27,6 @@ def install_gitleaks():
     """Install gitleaks."""
     if sys.platform == "linux":
         try:
-            subprocess.run(["sudo", "apt-get", "update"], check=True)
-            subprocess.run(["sudo", "apt-get", "install", "wget"], check=True)
             download_url = "https://github.com/gitleaks/gitleaks/releases/download/v8.18.1/gitleaks_8.18.1_linux_x64.tar.gz"
             subprocess.run(["wget", download_url], check=True)
             
